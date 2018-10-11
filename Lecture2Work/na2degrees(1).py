@@ -56,5 +56,12 @@ def in_degree_distribution(digraph):
             degree_distribution[in_degree[vertex]] = 1
     return degree_distribution
 
+in_degrees = compute_in_degrees(EXAMPLE)
 
+print(in_degrees[3])
+count = 0
+for x in in_degrees:
+    if in_degrees[x] == 3:
+        count += 1
+print(count)
 
