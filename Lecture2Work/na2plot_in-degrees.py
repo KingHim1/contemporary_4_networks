@@ -87,7 +87,8 @@ import numpy as np
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 
-#plot degree distribution 
+#plot degree distribution
+
 plt.xlabel('In-Degree')
 plt.ylabel('Normalized Rate')
 plt.title('In-Degree Distribution of Citation Graph')
