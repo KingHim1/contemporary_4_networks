@@ -7,6 +7,7 @@
 http://www.codeskulptor.org/#alg_dpa_trial.py; """
 
 import random
+from na2loadgraph import *
 
 #first we need
 class PATrial:
@@ -54,7 +55,7 @@ class PATrial:
         self._node_numbers.append(self._num_nodes)
         # update the number of nodes
         self._num_nodes += 1
-        print(self._node_numbers)
+        #print(self._node_numbers)
         return new_node_neighbors
     
 def make_complete_graph(num_nodes):
@@ -82,3 +83,57 @@ def make_PA_Graph(total_nodes, out_degree):
         PA_graph[vertex] = trial.run_trial(out_degree)
     return PA_graph
 
+
+
+## King - added Code below -- draw indegree distribution for PA_Graph
+def in_degree_distribution(digraph):
+    """Takes a directed graph and computes the unnormalized distribution of the
+    in-degrees of the graph.  Returns a dictionary whose keys correspond to
+    in-degrees of nodes in the graph and values are the number of nodes with
+    that in-degree. In-degrees with no corresponding nodes in the graph are not
+    included in the dictionary."""
+    #find in_degrees
+    in_degree = compute_in_degrees(digraph)
+    #initialize dictionary for degree distribution
+    degree_distribution = {}
+    #consider each vertex
+    for vertex in in_degree:
+        #update degree_distribution
+        if in_degree[vertex] in degree_distribution:
+            degree_distribution[in_degree[vertex]] += 1
+        else:
+            degree_distribution[in_degree[vertex]] = 1
+    return degree_distribution
+
+
+rand_graph = make_PA_Graph(3000, 10)
+
+rand_in_degrees = compute_in_degrees(rand_graph)
+
+rand_distribution = in_degree_distribution(rand_graph)
+
+normalized_rand_citations_distribution = {}
+for degree in rand_distribution:
+    normalized_rand_citations_distribution[degree] = rand_distribution[degree] / 2000
+
+
+
+
+# create arrays for plotting
+xdata = []
+ydata = []
+for degree in normalized_rand_citations_distribution:
+    xdata += [degree]
+    ydata += [normalized_rand_citations_distribution[degree]]
+
+import numpy as np
+import matplotlib.mlab as mlab
+import matplotlib.pyplot as plt
+
+# plot degree distribution
+
+plt.xlabel('In-Degree')
+plt.ylabel('Normalized Rate')
+plt.title('In-Degree Distribution of Citation Graph')
+plt.loglog(xdata, ydata, marker='.', linestyle='None', color='b')
+plt.savefig('na3_rand.png')
