@@ -136,9 +136,20 @@ def diameter_clustering_vs_prob_ws(num_nodes, k):
 #look at past exercises for plotting
 
 print(diameter_clustering_vs_prob_ws(100, 5))
-results = []
 
-diameter_clustering_vs_prob_ws(300, 10)
+results = diameter_clustering_vs_prob_ws(100, 5)
+
+print(results[2])
+
+import numpy as np
+import matplotlib.mlab as mlab
+import matplotlib.pyplot as plt
 
 
+
+plt.xlabel('Rewiring Probability')
+plt.ylabel('Diameters')
+plt.title('Diameter Distribution of ws Graph')
+plt.loglog(results[0], results[1], marker='.', linestyle='None', color='b')
+plt.savefig('na4_ws_diam.png')
 

@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2216549e-7512-45fb-a40a-2172464529c6" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture2Work/alg_phys-cite.txt" afterPath="$PROJECT_DIR$/practical1Work/alg_phys-cite.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture2Work/na2(2).rtf" afterPath="$PROJECT_DIR$/practical1Work/na2(2).rtf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture2Work/na2.png" afterPath="$PROJECT_DIR$/practical1Work/na2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture2Work/na2_rand.png" afterPath="$PROJECT_DIR$/practical1Work/na2_rand.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture2Work/na2degrees.py" afterPath="$PROJECT_DIR$/practical1Work/na2degrees.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture2Work/na2loadgraph.py" afterPath="$PROJECT_DIR$/practical1Work/na2loadgraph.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture2Work/na2plot_in_degrees.py" afterPath="$PROJECT_DIR$/practical1Work/na2plot_in_degrees.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture2Work/na2random(1).py" afterPath="$PROJECT_DIR$/practical1Work/na2random(1).py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture2Work/na3_rand.png" afterPath="$PROJECT_DIR$/practical1Work/na3_rand.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture3Work/lecture3handout.pdf" afterPath="$PROJECT_DIR$/practical2Work/lecture3handout.pdf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture3Work/na2loadgraph.py" afterPath="$PROJECT_DIR$/practical2Work/na2loadgraph.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture3Work/na3.rtf" afterPath="$PROJECT_DIR$/practical2Work/na3.rtf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture3Work/na3_rand.png" afterPath="$PROJECT_DIR$/practical2Work/na3_rand.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture3Work/na3pa(1).png" afterPath="$PROJECT_DIR$/practical2Work/na3pa(1).png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture3Work/na3pa(3).py" afterPath="$PROJECT_DIR$/practical2Work/na3pa(3).py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture3Work/na3pa_in-degrees(1).py" afterPath="$PROJECT_DIR$/practical2Work/na3pa_in-degrees(1).py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture3Work/na3random(1).png" afterPath="$PROJECT_DIR$/practical2Work/na3random(1).png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture3Work/na3random_giant_component(1).py" afterPath="$PROJECT_DIR$/practical2Work/na3random_giant_component(1).py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture3Work/na3random_in-degrees(1).py" afterPath="$PROJECT_DIR$/practical2Work/na3random_in-degrees(1).py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Lecture3Work/na3randomcomponent(1).png" afterPath="$PROJECT_DIR$/practical2Work/na3randomcomponent(1).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/summative/na2plot_in_degrees.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/summative/summativeQuestion1.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/practical3Work/na5ws.py" afterPath="$PROJECT_DIR$/practical3Work/na5ws.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,19 +16,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="na5ws.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/practical3Work/na5ws.py">
+      <file leaf-file-name="summativeQuestion1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/summative/summativeQuestion1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="144" column="0" lean-forward="true" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+            <state relative-caret-position="-125">
+              <caret line="213" column="35" lean-forward="false" selection-start-line="213" selection-start-column="35" selection-end-line="213" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coauthorship.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/summative/coauthorship.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="na_ring_in_deg.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/summative/na_ring_in_deg.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="na_ring_cluster.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/summative/na_ring_cluster.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
+    <findStrings>
+      <find>normalized</find>
+    </findStrings>
     <replaceStrings>
       <replace />
     </replaceStrings>
@@ -62,7 +81,9 @@
         <option value="$PROJECT_DIR$/Lecture2Work/na2loadgraph(1).py" />
         <option value="$PROJECT_DIR$/Lecture3Work/na3pa(3).py" />
         <option value="$PROJECT_DIR$/Lecture2Work/na2random(1).py" />
+        <option value="$PROJECT_DIR$/practical1Work/na2plot_in_degrees.py" />
         <option value="$PROJECT_DIR$/practical3Work/na5ws.py" />
+        <option value="$PROJECT_DIR$/summative/summativeQuestion1.py" />
       </list>
     </option>
   </component>
@@ -118,6 +139,26 @@
               <item name="Networks" type="b2602c69:ProjectViewProjectNode" />
               <item name="Networks" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Networks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Networks" type="462c0819:PsiDirectoryNode" />
+              <item name="practical1Work" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Networks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Networks" type="462c0819:PsiDirectoryNode" />
+              <item name="practical2Work" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Networks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Networks" type="462c0819:PsiDirectoryNode" />
+              <item name="practical3Work" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Networks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Networks" type="462c0819:PsiDirectoryNode" />
+              <item name="summative" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -130,11 +171,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Lecture2Work" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/summative" />
       <recent name="$PROJECT_DIR$/Lecture3Work" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Lecture2Work" />
       <recent name="$PROJECT_DIR$/Lecture3Work" />
     </key>
   </component>
@@ -150,24 +192,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.na5ws">
-    <configuration name="na2loadgraph(1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lecture2Work" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Networks" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lecture2Work/na2loadgraph.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.summativeQuestion1">
     <configuration name="na2plot_in-degrees" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -225,9 +250,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/practical3Work" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Networks" />
@@ -236,20 +261,37 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="summativeQuestion1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/summative" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Networks" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/summative/summativeQuestion1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.na2loadgraph(1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.na2plot_in-degrees" />
-      <item index="2" class="java.lang.String" itemvalue="Python.na2random(1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.na3pa(3)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.na5ws" />
+      <item index="0" class="java.lang.String" itemvalue="Python.na2plot_in-degrees" />
+      <item index="1" class="java.lang.String" itemvalue="Python.na2random(1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.na3pa(3)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.na5ws" />
+      <item index="4" class="java.lang.String" itemvalue="Python.summativeQuestion1" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.na5ws" />
-        <item index="1" class="java.lang.String" itemvalue="Python.na2random(1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.na3pa(3)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.na2plot_in-degrees" />
-        <item index="4" class="java.lang.String" itemvalue="Python.na2loadgraph(1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.summativeQuestion1" />
+        <item index="1" class="java.lang.String" itemvalue="Python.na5ws" />
+        <item index="2" class="java.lang.String" itemvalue="Python.na2random(1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.na3pa(3)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.na2plot_in-degrees" />
       </list>
     </recent_temporary>
   </component>
@@ -268,17 +310,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17739628" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17739628" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2595908" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2595908" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2595908" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2267525" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39897698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -286,7 +328,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -294,7 +335,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -370,13 +413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/practical1Work/na2.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -411,50 +447,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/practical2Work/na3pa(3).py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practical1Work/na3_rand.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practical1Work/na2plot_in_degrees.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="62" column="57" lean-forward="true" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practical1Work/na2degrees.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practical1Work/na2loadgraph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/practical2Work/na3random_in-degrees(1).py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-447">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/practical1Work/na2random(1).py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="73" column="121" lean-forward="false" selection-start-line="73" selection-start-column="121" selection-end-line="73" selection-end-column="121" />
         </state>
       </provider>
     </entry>
@@ -468,10 +464,123 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/practical2Work/na3pa(3).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="138" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practical1Work/na2loadgraph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practical1Work/na3_rand.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practical1Work/na2degrees.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practical1Work/na2random(1).py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="73" column="121" lean-forward="false" selection-start-line="73" selection-start-column="121" selection-end-line="73" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practical1Work/na2plot_in_degrees.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="64" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summative/na2plot_in_degrees.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="96" selection-end-column="4" />
+          <folding>
+            <element signature="e#2831#2849#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/practical3Work/na4_ws_diam.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summative/na_ring.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/practical3Work/na5ws.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="144" column="0" lean-forward="true" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding>
+            <element signature="e#74#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summative/na_ring_cluster.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summative/na_ring2_in_deg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summative/na_ring_in_deg2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summative/na_ring_in_deg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summative/summativeQuestion1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <caret line="213" column="35" lean-forward="false" selection-start-line="213" selection-start-column="35" selection-end-line="213" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/summative/coauthorship.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
           <folding />
         </state>
       </provider>
