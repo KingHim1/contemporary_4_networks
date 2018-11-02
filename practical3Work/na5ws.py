@@ -57,16 +57,13 @@ to choose a random node use
 
 def local_clustering_coefficient(graph, vertex):
     """returns ratio of edges to possible edges in neighbourhood of vertex"""
-    #look at each pair of neighbours of vertex
-    ki = len(graph[vertex])
-    ei = 0
-    for neighbour in graph[vertex]:
-        ei += len(graph[neighbour])
-    return (2 * ei) / (ki * (ki - 1))
-
-    #look at whether neighbour pair are joined by an edge
-
-    #divide number of edges found by number of pairs considered
+    edge_count = 0
+    for neighbour1 in graph[vertex]:
+        for neighbour2 in graph[vertex]:                                        #look at each pair of neighbours of vertex
+            if neighbour1 in graph[neighbour2]:                                 #if the neighbours are joined to each other by an edge
+                edge_count += 1                                                 #add one to the edge count
+    degree = len(graph[vertex])                                                 #count how many neighbours vertex has
+    return edge_count / (degree * (degree - 1))                                 #note factor of 2 missing as each edge counted twice
 
 
 
@@ -130,14 +127,14 @@ def diameter_clustering_vs_prob_ws(num_nodes, k):
             coeffs += [clustering_coefficient(graph)]
         ydata += [sum(diameters) / k / 19.0] #divide by 19 as this diameter of circle lattice
         zdata += [sum(coeffs) / k / 0.7] #divide by 0.7 as this is clustering coefficient of circle lattice
-        prob = 1.1*prob
+        prob = 1.2*prob
     return xdata, ydata, zdata
 
 #look at past exercises for plotting
 
-print(diameter_clustering_vs_prob_ws(100, 5))
+# print(diameter_clustering_vs_prob_ws(100, 5))
 
-results = diameter_clustering_vs_prob_ws(100, 5)
+results = diameter_clustering_vs_prob_ws(300, 8)
 
 print(results[2])
 
@@ -150,6 +147,7 @@ import matplotlib.pyplot as plt
 plt.xlabel('Rewiring Probability')
 plt.ylabel('Diameters')
 plt.title('Diameter Distribution of ws Graph')
-plt.loglog(results[0], results[1], marker='.', linestyle='None', color='b')
+plt.semilogx(results[0], results[1], marker='.', linestyle='-', color='b')
+plt.semilogx(results[0], results[2], marker='.', linestyle='-', color='r')
 plt.savefig('na4_ws_diam.png')
 

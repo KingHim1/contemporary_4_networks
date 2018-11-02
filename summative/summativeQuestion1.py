@@ -1,9 +1,10 @@
 import random
 import queue
 import time
+import networkx as nx
 
 def make_ring_graph(m,k,p,q):
-    x = time.clock()
+    # x = time.clock()
     ring_graph = {}
     for vertex in range(m * k):
         ring_graph[vertex] = []
@@ -34,7 +35,7 @@ def make_ring_graph(m,k,p,q):
                         if prob < q:
                             ring_graph[i] += [j]
                             ring_graph[j] += [i]
-    print(time.clock() - x)
+    # print(time.clock() - x)
     return ring_graph
 
 def make_ring_graph1(m, k, p, q):
@@ -85,18 +86,13 @@ def make_ws_graph(num_nodes, clockwise_neighbours, rewiring_prob):
 
 
 def local_clustering_coefficient(graph, vertex):
-    """returns ratio of edges to possible edges in neighbourhood of vertex"""
-    #look at each pair of neighbours of vertex
-    ki = len(graph[vertex])
-    ei = 0
-    for neighbour in graph[vertex]:
-        ei += len(graph[neighbour])
-    return (2 * ei) / (ki * (ki - 1))
-
-    #look at whether neighbour pair are joined by an edge
-
-    #divide number of edges found by number of pairs considered
-
+    edge_count = 0
+    for neighbour1 in graph[vertex]:
+        for neighbour2 in graph[vertex]:  # look at each pair of neighbours of vertex
+            if neighbour1 in graph[neighbour2]:  # if the neighbours are joined to each other by an edge
+                edge_count += 1  # add one to the edge count
+    degree = len(graph[vertex])  # count how many neighbours vertex has
+    return edge_count / (degree * (degree - 1))  # note factor of 2 missing as each edge counted twice
 
 
 def clustering_coefficient(graph):
@@ -195,8 +191,8 @@ def diameter_clustering_vs_prob_ring(m, k, p, q, trials):
     xdata = []
     ydata = []
     zdata = []
-    prob = 0.1
-    for x in range(0, 1):
+    prob = 0.0005
+    while prob < 1:
         xdata += [prob]
         diameters = []
         coeffs = []
@@ -207,43 +203,93 @@ def diameter_clustering_vs_prob_ring(m, k, p, q, trials):
         ydata += [sum(diameters) / trials / 19.0]  # divide by 19 as this diameter of circle lattice
         zdata += [sum(coeffs) / trials / 0.7]  # divide by 0.7 as this is clustering coefficient of circle lattice
         prob = 1.1 * prob
-        print(prob)
     return xdata, ydata, zdata
 
+def plot_degree_of_graph(m, k, p, q, color):
+    ring_graph = make_ring_graph(m, k, p, q)
+    # in_degrees = compute_in_degrees(ring_graph)
+    in_degree_dist = in_degree_distribution(ring_graph)
+    normalised_in_deg_dist = normalize_in_deg_dist(in_degree_dist, ring_graph)
+    xdata = []
+    ydata = []
+    for degree in normalised_in_deg_dist:
+        xdata += [degree]
+        ydata += [normalised_in_deg_dist[degree]]
+    plt.loglog(xdata, ydata, marker='.', linestyle='None', color=color)
 
-ring_graph = make_ring_graph(100, 10, 0.4, 0.1)
-
-in_degrees = compute_in_degrees(ring_graph)
-
-in_degree_dist = in_degree_distribution(ring_graph)
-
-normalised_in_deg_dist = normalize_in_deg_dist(in_degree_dist, ring_graph)
-
-
-
-xdata = []
-ydata = []
-for degree in normalised_in_deg_dist:
-    xdata += [degree]
-    ydata += [normalised_in_deg_dist[degree]]
+def plot_diameter_of_graph(m, k, p, q, trials, color):
+    print("next diameter plot")
+    probability = 0.06
+    xdata = []
+    ydata = []
+    while probability < 0.5 - q:
+        xdata += [probability]
+        diameters = []
+        for i in range(trials):
+            ring_graph = make_ring_graph(m, k, probability, q)
+            diameters += [diameter(ring_graph)]
+        ydata += [sum(diameters) / trials]
+        probability = 1.05 * probability
+    plt.plot(xdata, ydata, marker='.', linestyle='-', color=color)
 
 import numpy as np
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 
 # plot degree distribution
-
-plt.xlabel('In-Degree')
-plt.ylabel('Normalised Rate')
-plt.title('In-Degree Distribution of Ring Graph')
-plt.loglog(xdata, ydata, marker='.', linestyle='None', color='b')
-plt.savefig('na_ring_in_deg.png')
-
 #
-# results = diameter_clustering_vs_prob_ring(100, 10, 0.5, 0.1, 1)
+# plt.clf()
+# plt.xlabel('In-Degree')
+# plt.ylabel('Normalised Rate')
+# plt.title('In-Degree Distribution of Ring Graph - Fixed m k')
+# plot_degree_of_graph(300, 10, 0.49999, 0.00001, 'm')
+# plot_degree_of_graph(300, 10, 0.499, 0.001, 'r')
+# plot_degree_of_graph(300, 10, 0.45, 0.05, 'b')
+# plot_degree_of_graph(300, 10, 0.4, 0.1, 'g')
+# plot_degree_of_graph(300, 10, 0.3, 0.2, 'y')
+# plot_degree_of_graph(300, 10, 0.25, 0.25, 'c')
+# plt.savefig('na_ring_in_deg.png')
+
+# plt.clf()
+# plt.xlabel('In-Degree')
+# plt.ylabel('Normalised Rate')
+# plt.title('In-Degree Distribution of Ring Graph - Fixed m k')
+# plot_degree_of_graph(50, 5, 0.4, 0.1, 'm')
+# plot_degree_of_graph(100, 10, 0.4, 0.1, 'r')
+# plot_degree_of_graph(200, 20, 0.4, 0.1, 'b')
+# plot_degree_of_graph(400, 40, 0.4, 0.1, 'g')
+# plot_degree_of_graph(800, 80, 0.4, 0.1, 'c')
+# plt.savefig('na_ring_in_deg2.png')
+
+# plt.clf()
+# plt.xlabel('In-Degree')
+# plt.ylabel('Normalised Rate')
+# plt.title('In-Degree Distribution of Ring Graph - Fixed m k')
+# plot_degree_of_graph(50, 100, 0.4, 0.1, 'm')
+# plot_degree_of_graph(67, 75, 0.4, 0.1, 'r')
+# plot_degree_of_graph(100, 50, 0.4, 0.1, 'b')
+# plot_degree_of_graph(200, 25, 0.4, 0.1, 'y')
+# plot_degree_of_graph(1000, 5, 0.4, 0.1, 'c')
+# plt.savefig('na_ring_in_deg3.png')
+
+# plt.clf()
+# plt.xlabel('In-Degree')
+# plt.ylabel('Normalised Rate')
+# plt.title('Diameter Distribution of Ring Graph - Fixed p q')
+# plot_diameter_of_graph(50, 4, 0.4, 0.01, 5,'m')
+# plot_diameter_of_graph(20, 10, 0.4, 0.01, 5,'r')
+# plot_diameter_of_graph(10, 20, 0.4, 0.1, 10,'b')
+# plot_diameter_of_graph(5, 40, 0.4, 0.1, 10,'y')
+#
+# plt.savefig('na_ring_diameter.png')
+#
+# results = diameter_clustering_vs_prob_ring(30, 20, 0.4, 0.1, 1)
 #
 # plt.xlabel('Rewiring Probability')
 # plt.ylabel('Diameters')
 # plt.title('Diameter Distribution of ws Graph')
-# plt.plot(results[0], results[1], marker='.', linestyle='None', color='b')
+# print(results[1])
+# print(results[2])
+# plt.loglog(results[0], results[1], marker='.', linestyle='None', color='b')
+# plt.loglog(results[0], results[2], marker='.', linestyle='None', color='r')
 # plt.savefig('na_ring_cluster.png')

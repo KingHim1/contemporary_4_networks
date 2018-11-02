@@ -34,6 +34,7 @@ def load_graph(graph_txt):
     nodes = 0
     for line in graph:
         neighbors = line.split(' ')
+        print(neighbors)
         node = int(neighbors[0])
         answer_graph[node] = set([])
         for neighbor in neighbors[1 : -1]:
