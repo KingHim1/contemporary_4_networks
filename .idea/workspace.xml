@@ -10,94 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="na3pa(3).py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/practical2Work/na3pa(3).py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-213">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="e#218#231#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="na_ring.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summative/na_ring.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="na_ring2_in_deg.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summative/na_ring2_in_deg.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="na_ring_cluster.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summative/na_ring_cluster.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="na_ring_diameter.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summative/na_ring_diameter.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="na_ring_in_deg.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summative/na_ring_in_deg.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="na_ring_in_deg2.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summative/na_ring_in_deg2.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="na_ring_in_deg3.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summative/na_ring_in_deg3.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="summativeQuestion1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summative/summativeQuestion1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4275">
-              <caret line="285" column="0" lean-forward="false" selection-start-line="285" selection-start-column="2" selection-end-line="294" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-                <marker date="1541082256509" expanded="true" signature="9064:9465" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SummativeQuestion2.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/summative/SummativeQuestion2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="77" column="46" lean-forward="true" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -143,7 +56,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -194,21 +107,6 @@
             <path>
               <item name="Networks" type="b2602c69:ProjectViewProjectNode" />
               <item name="Networks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Networks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Networks" type="462c0819:PsiDirectoryNode" />
-              <item name="practical2Work" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Networks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Networks" type="462c0819:PsiDirectoryNode" />
-              <item name="practical3Work" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Networks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Networks" type="462c0819:PsiDirectoryNode" />
-              <item name="summative" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -360,7 +258,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17739628" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -637,9 +535,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-213">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#218#231#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -682,10 +578,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4275">
           <caret line="285" column="0" lean-forward="false" selection-start-line="285" selection-start-column="2" selection-end-line="294" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1541082256509" expanded="true" signature="9064:9465" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -693,9 +586,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
           <caret line="77" column="46" lean-forward="true" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
