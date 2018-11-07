@@ -29,7 +29,7 @@ class PATrial:
         """
         self._num_nodes = num_nodes #note that the vertices are labelled from 0 so self._num_nodes is the label of the next vertex to be added
         self._node_numbers = [node for node in range(num_nodes) for dummy_idx in range(num_nodes)]
-
+        print(self._node_numbers)
 
     def run_trial(self, num_nodes):
         """
@@ -41,7 +41,8 @@ class PATrial:
         
         Returns:
         Set of nodes
-        """       
+        """
+        print(self._node_numbers)
         #compute the neighbors for the newly-created node
         new_node_neighbors = set()
         for dummy_idx in range(num_nodes):
@@ -106,7 +107,7 @@ def in_degree_distribution(digraph):
     return degree_distribution
 
 
-rand_graph = make_PA_Graph(3000, 10)
+rand_graph = make_PA_Graph(100, 4)
 
 rand_in_degrees = compute_in_degrees(rand_graph)
 

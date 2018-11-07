@@ -229,6 +229,7 @@ def plot_diameter_of_graph(m, k, p, q, trials, color):
             ring_graph = make_ring_graph(m, k, probability, q)
             diameters += [diameter(ring_graph)]
         ydata += [sum(diameters) / trials]
+        print(ydata)
         probability = 1.05 * probability
     plt.plot(xdata, ydata, marker='.', linestyle='-', color=color)
 
@@ -272,14 +273,14 @@ import matplotlib.pyplot as plt
 # plot_degree_of_graph(1000, 5, 0.4, 0.1, 'c')
 # plt.savefig('na_ring_in_deg3.png')
 
-# plt.clf()
-# plt.xlabel('In-Degree')
-# plt.ylabel('Normalised Rate')
-# plt.title('Diameter Distribution of Ring Graph - Fixed p q')
-# plot_diameter_of_graph(50, 4, 0.4, 0.01, 5,'m')
-# plot_diameter_of_graph(20, 10, 0.4, 0.01, 5,'r')
-# plot_diameter_of_graph(10, 20, 0.4, 0.1, 10,'b')
-# plot_diameter_of_graph(5, 40, 0.4, 0.1, 10,'y')
+plt.clf()
+plt.xlabel('In-Degree')
+plt.ylabel('Normalised Rate')
+plt.title('Diameter Distribution of Ring Graph - Fixed p q')
+plot_diameter_of_graph(50, 4, 0.4, 0.1, 5,'m')
+plot_diameter_of_graph(20, 10, 0.4, 0.1, 5,'r')
+plot_diameter_of_graph(10, 20, 0.4, 0.1, 5,'b')
+plot_diameter_of_graph(5, 40, 0.4, 0.1, 5,'y')
 #
 # plt.savefig('na_ring_diameter.png')
 #
