@@ -80,79 +80,82 @@ def make_PA_Graph(total_nodes, out_degree):
     return PA_graph
 
 
-# file = open("coauthorship.txt")
-# text = file.read()
-# text = text.split("*")
-#
-# verticesFromText = text[1].split("\n")
-# verticesToName = {}
-# cite_graph = nx.Graph()
-# for i in range(1, len(verticesFromText)-1):
-#     verticesToName[i] = verticesFromText[i].split("\"")[1]
-#     cite_graph.add_node(i)
-#
-# edgesFromText = text[2].split("\n")
-# for i in range(1, len(edgesFromText)-1):
-#     edges = edgesFromText[i].split(" ")
-#     # print(edges[2] + ": " + edges[3])
-#     if int(edges[2]) != int(edges[3]):
-#         cite_graph.add_edge(int(edges[2]), int(edges[3]))
-# #
-# xdata = []
-# ydata = []
-# cite_dist = {}
-# for vertex in cite_graph.adj:
-#     # xdata.append(vertex)
-#     if len(cite_graph.adj[vertex]) != 0:
-#         H = cite_graph.subgraph(cite_graph.adj[vertex]).to_undirected()
-#         # print(nx.maximal_independent_set(H))
-#         val = len(nx.maximal_independent_set(H))
-#         # ydata.append(val)
-#         if val in cite_dist:
-#             cite_dist[val] += 1
-#         else:
-#             cite_dist[val] = 1
-#     # else:
-#         # ydata.append(0)
-#
+file = open("coauthorship.txt")
+text = file.read()
+text = text.split("*")
 
-ring_graph = nx.Graph()
-H = make_ring_graph(30, 100, 0.8, 0.2)
-for x in H:
-    for y in H[x]:
-        ring_graph.add_edge(int(x), int(y))
+verticesFromText = text[1].split("\n")
+verticesToName = {}
+cite_graph = nx.Graph()
+for i in range(1, len(verticesFromText)-1):
+    verticesToName[i] = verticesFromText[i].split("\"")[1]
+    cite_graph.add_node(i)
 
-xdata1 = []
-ydata1 = []
-ring_dist = {}
-for vertex in ring_graph.adj:
-    # xdata1.append(vertex)
-    if len(ring_graph.adj[vertex]) != 0:
-        H = ring_graph.subgraph(ring_graph.adj[vertex]).to_undirected()
+edgesFromText = text[2].split("\n")
+for i in range(1, len(edgesFromText)-1):
+    edges = edgesFromText[i].split(" ")
+    # print(edges[2] + ": " + edges[3])
+    if int(edges[2]) != int(edges[3]):
+        cite_graph.add_edge(int(edges[2]), int(edges[3]))
+#
+xdata = []
+ydata = []
+cite_dist = {}
+for vertex in cite_graph.adj:
+    # xdata.append(vertex)
+    if len(cite_graph.adj[vertex]) != 0:
+        H = cite_graph.subgraph(cite_graph.adj[vertex]).to_undirected()
         # print(nx.maximal_independent_set(H))
         val = len(nx.maximal_independent_set(H))
-        # ydata1.append(val)
-        if val in ring_dist:
-            ring_dist[val] +=1
+        # ydata.append(val)
+        if val in cite_dist:
+            cite_dist[val] += 1
         else:
-            ring_dist[val] = 1
+            cite_dist[val] = 1
     # else:
-    #     ydata1.append(0)
-
-for x in ring_dist:
-    xdata1.append(x)
-    ydata1.append(ring_dist[x])
-
-
+        # ydata.append(0)
+count = 0
+for x in cite_graph:
+    count += len(cite_graph[x])
+print(count)
 #
-# commented here ->
-
-
+# ring_graph = nx.Graph()
+# H = make_ring_graph(100, 15, 0.8, 0.2)
+# for x in H:
+#     for y in H[x]:
+#         ring_graph.add_edge(int(x), int(y))
+#
+# xdata1 = []
+# ydata1 = []
+# ring_dist = {}
+# for vertex in ring_graph.adj:
+#     # xdata1.append(vertex)
+#     if len(ring_graph.adj[vertex]) != 0:
+#         H = ring_graph.subgraph(ring_graph.adj[vertex]).to_undirected()
+#         # print(nx.maximal_independent_set(H))
+#         val = len(nx.maximal_independent_set(H))
+#         # ydata1.append(val)
+#         if val in ring_dist:
+#             ring_dist[val] +=1
+#         else:
+#             ring_dist[val] = 1
+#     # else:
+#     #     ydata1.append(0)
+#
+# for x in ring_dist:
+#     xdata1.append(x)
+#     ydata1.append(ring_dist[x])
+#
+#
+# #
+# # commented here ->
+#
+#
 # for y in cite_dist:
 #     xdata.append(y)
 #     ydata.append(cite_dist[y])
 # #
-
+#
 # PA_graph = nx.Graph()
 # PA_digraph = make_PA_Graph(1500, 10)
 # for x in PA_digraph:
@@ -183,12 +186,12 @@ for x in ring_dist:
 # for x in PA_dist:
 #     xdata2.append(x)
 #     ydata2.append(PA_dist[x])
-
-import matplotlib.pyplot as plt
-plt.xlabel('node index')
-plt.ylabel('Brilliance')
-plt.title('Brilliance distribution of citation graph')
-# plt.loglog(xdata, ydata, marker='.', linestyle='None', color='b')
-plt.loglog(xdata1, ydata1, marker='.', linestyle='None', color='y')
-# plt.loglog(xdata2, ydata2, marker='.', linestyle='None', color='r')
-plt.savefig("na_brill0")
+#
+# import matplotlib.pyplot as plt
+# plt.xlabel('node index')
+# plt.ylabel('Brilliance')
+# plt.title('Brilliance distribution of citation graph')
+# plt.semilogx(xdata, ydata, marker='.', linestyle='-', color='b')
+# plt.semilogx(xdata1, ydata1, marker='.', linestyle='-', color='y')
+# plt.semilogx(xdata2, ydata2, marker='.', linestyle='-', color='r')
+# plt.savefig("na_brill0")

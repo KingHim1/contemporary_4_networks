@@ -3,7 +3,7 @@ import queue
 import time
 import networkx as nx
 
-def make_ring_graph(m,k,p,q):
+def make_ring_graph1(m,k,p,q):
     # x = time.clock()
     ring_graph = {}
     for vertex in range(m * k):
@@ -17,15 +17,17 @@ def make_ring_graph(m,k,p,q):
             if groupInd1 == groupInd2:
                 isSame = True
                 isNeighbour = True
-            if abs(groupInd1 - groupInd2) == 1:
+            if (groupInd1 - groupInd2) % m == 1:
                 isNeighbour = True
             for ind1 in range(0, k):
                 start = 0
                 if isSame:
-                    start = ind1
+                    start = ind1 + 1
                 for ind2 in range(start, k):
                     i = groupInd1 * k + ind1
                     j = groupInd2 * k + ind2
+                    # print(i)
+                    # print(j)
                     prob = random.random()
                     if isNeighbour and i != j:
                         if prob < p:
@@ -38,15 +40,15 @@ def make_ring_graph(m,k,p,q):
     # print(time.clock() - x)
     return ring_graph
 
-def make_ring_graph1(m, k, p, q):
-    x = time.clock()
+def make_ring_graph(m, k, p, q):
+    # x = time.clock()
     ring_graph = {}
     for vertex in range(m * k):
         ring_graph[vertex] = []
     for i in range(m * k):
         for j in range(i, m * k):
             prob = random.random()
-            if i / m == j / m or abs(i / m - j / m) == 1:
+            if i / m == j / m or (i / m - j / m) % m == 1:
                 if prob < p:
                     ring_graph[i] += [j]
                     ring_graph[j] += [i]
@@ -54,7 +56,7 @@ def make_ring_graph1(m, k, p, q):
                 if prob < q:
                     ring_graph[i] += [j]
                     ring_graph[j] += [i]
-    print(time.clock() - x)
+    # print(time.clock() - x)
     return ring_graph
 
 
@@ -191,25 +193,26 @@ def diameter_clustering_vs_prob_ring(m, k, p, q, trials):
     xdata = []
     ydata = []
     zdata = []
-    prob = 0.0005
+    prob = 0.1
     while prob < 1:
         xdata += [prob]
         diameters = []
         coeffs = []
         for i in range(trials):
-            graph = make_ring_graph(m, k, p, q)
+            graph = make_ring_graph(m, k, prob, q)
             diameters += [diameter(graph)]
             coeffs += [clustering_coefficient(graph)]
-        ydata += [sum(diameters) / trials / 19.0]  # divide by 19 as this diameter of circle lattice
-        zdata += [sum(coeffs) / trials / 0.7]  # divide by 0.7 as this is clustering coefficient of circle lattice
-        prob = 1.1 * prob
+        ydata += [sum(diameters) / trials /19]  # divide by 19 as this diameter of circle lattice
+        zdata += [sum(coeffs) / trials /0.7]  # divide by 0.7 as this is clustering coefficient of circle lattice
+        prob = 1.05 * prob
     return xdata, ydata, zdata
 
 def plot_degree_of_graph(m, k, p, q, color):
-    ring_graph = make_ring_graph(m, k, p, q)
-    # in_degrees = compute_in_degrees(ring_graph)
-    in_degree_dist = in_degree_distribution(ring_graph)
-    normalised_in_deg_dist = normalize_in_deg_dist(in_degree_dist, ring_graph)
+    # ring_graph = make_ring_graph(m, k, p, q)
+    # # in_degrees = compute_in_degrees(ring_graph)
+    # in_degree_dist = in_degree_distribution(ring_graph)
+    # normalised_in_deg_dist = normalize_in_deg_dist(in_degree_dist, ring_graph)
+    normalised_in_deg_dist = average_normalized_degree_distribution(m, k, p, q, 1000)
     xdata = []
     ydata = []
     for degree in normalised_in_deg_dist:
@@ -219,48 +222,125 @@ def plot_degree_of_graph(m, k, p, q, color):
 
 def plot_diameter_of_graph(m, k, p, q, trials, color):
     print("next diameter plot")
-    probability = 0.06
+    probability = 0.1
     xdata = []
     ydata = []
-    while probability < 0.5 - q:
+    while probability < 1 - q:
         xdata += [probability]
         diameters = []
         for i in range(trials):
             ring_graph = make_ring_graph(m, k, probability, q)
             diameters += [diameter(ring_graph)]
         ydata += [sum(diameters) / trials]
-        print(ydata)
+        # print(ydata)
         probability = 1.05 * probability
     plt.plot(xdata, ydata, marker='.', linestyle='-', color=color)
+
+
+def average_normalized_degree_distribution(m, k, p, q, trials):
+    """finds the average degree distribution of a random graph on 2000 nodes
+    with edge probability 0.1 by taking k trials for each data point"""
+    cumulative_dist = {}
+    count_for_deg = {}
+    # for deg in range(140,260): cumulative_dist[deg] = 0
+    for i in range(trials):
+        graph = make_ring_graph(m, k, p, q)
+        #find the distribution
+        deg_dist = in_degree_distribution(graph)
+        dist = normalize_in_deg_dist(deg_dist, graph)
+        for deg in dist:
+            if deg not in count_for_deg:
+                count_for_deg[deg] = 1
+                cumulative_dist[deg] = dist[deg]
+            else:
+                count_for_deg[deg] += 1
+                cumulative_dist[deg] += dist[deg]
+    average_dist = {}
+    # print(cumulative_dist)
+    # print(count_for_deg)
+    for deg in cumulative_dist:
+        print(deg)
+        average_dist[deg] = cumulative_dist[deg] / count_for_deg[deg]
+    return average_dist
 
 import numpy as np
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 
 # plot degree distribution
-#
-# plt.clf()
-# plt.xlabel('In-Degree')
-# plt.ylabel('Normalised Rate')
-# plt.title('In-Degree Distribution of Ring Graph - Fixed m k')
-# plot_degree_of_graph(300, 10, 0.49999, 0.00001, 'm')
-# plot_degree_of_graph(300, 10, 0.499, 0.001, 'r')
-# plot_degree_of_graph(300, 10, 0.45, 0.05, 'b')
-# plot_degree_of_graph(300, 10, 0.4, 0.1, 'g')
-# plot_degree_of_graph(300, 10, 0.3, 0.2, 'y')
-# plot_degree_of_graph(300, 10, 0.25, 0.25, 'c')
-# plt.savefig('na_ring_in_deg.png')
+
+plt.clf()
+plt.xlabel('In-Degree')
+plt.ylabel('Normalised Rate')
+plt.title('In-Degree Distribution of Ring Graph - Fixed m k')
+# plot_degree_of_graph(20, 20, 0.49999, 0.00001, 'm')
+# plot_degree_of_graph(20, 20, 0.499, 0.001, 'r')
+plot_degree_of_graph(20, 20, 0.475, 0.025, 'r')
+plot_degree_of_graph(20, 20, 0.45, 0.05, 'b')
+plot_degree_of_graph(20, 20, 0.4, 0.1, 'g')
+plot_degree_of_graph(20, 20, 0.3, 0.2, 'y')
+plot_degree_of_graph(20, 20, 0.25, 0.25, 'c')
+plt.savefig('summ_ring_in_deg.png')
 
 # plt.clf()
 # plt.xlabel('In-Degree')
 # plt.ylabel('Normalised Rate')
 # plt.title('In-Degree Distribution of Ring Graph - Fixed m k')
-# plot_degree_of_graph(50, 5, 0.4, 0.1, 'm')
-# plot_degree_of_graph(100, 10, 0.4, 0.1, 'r')
-# plot_degree_of_graph(200, 20, 0.4, 0.1, 'b')
-# plot_degree_of_graph(400, 40, 0.4, 0.1, 'g')
-# plot_degree_of_graph(800, 80, 0.4, 0.1, 'c')
-# plt.savefig('na_ring_in_deg2.png')
+# plot_degree_of_graph(10, 15, 0.49999, 0.00001, 'm')
+# plot_degree_of_graph(10, 15, 0.499, 0.001, 'r')
+# plot_degree_of_graph(10, 15, 0.45, 0.05, 'b')
+# plot_degree_of_graph(10, 15, 0.4, 0.1, 'g')
+# plot_degree_of_graph(10, 15, 0.3, 0.2, 'y')
+# plot_degree_of_graph(10, 15, 0.25, 0.25, 'c')
+# plt.savefig('na_ring_in_degy.png')
+#
+#
+# plt.clf()
+# plt.xlabel('In-Degree')
+# plt.ylabel('Normalised Rate')
+# plt.title('In-Degree Distribution of Ring Graph - Fixed m k')
+# plot_degree_of_graph(5, 100, 0.49999, 0.00001, 'm')
+# plot_degree_of_graph(5, 100, 0.499, 0.001, 'r')
+# plot_degree_of_graph(5, 100, 0.45, 0.05, 'b')
+# plot_degree_of_graph(5, 100, 0.4, 0.1, 'g')
+# plot_degree_of_graph(5, 100, 0.3, 0.2, 'y')
+# plot_degree_of_graph(5, 100, 0.25, 0.25, 'c')
+# plt.savefig('na_ring_in_degy3.png')
+
+# plt.clf()
+# plt.xlabel('In-Degree')
+# plt.ylabel('Normalised Rate')
+# plt.title('In-Degree Distribution of Ring Graph - Varied m k')
+# plot_degree_of_graph(10, 40, 0.4, 0.1, 'm')
+# plot_degree_of_graph(20, 20, 0.4, 0.1, 'r')
+# plot_degree_of_graph(40, 10, 0.4, 0.1, 'b')
+# plot_degree_of_graph(80, 5, 0.4, 0.1, 'g')
+# # plot_degree_of_graph(800, 80, 0.4, 0.1, 'c')
+# plt.savefig('na_ring_degx.png')
+
+
+# plt.clf()
+# plt.xlabel('In-Degree')
+# plt.ylabel('Normalised Rate')
+# plt.title('In-Degree Distribution of Ring Graph - Varied m')
+# plot_degree_of_graph(10, 10, 0.4, 0.1, 'm')
+# plot_degree_of_graph(20, 10, 0.4, 0.1, 'r')
+# plot_degree_of_graph(40, 10, 0.4, 0.1, 'b')
+# plot_degree_of_graph(80, 10, 0.4, 0.1, 'g')
+# # plot_degree_of_graph(800, 80, 0.4, 0.1, 'c')
+# plt.savefig('na_ring_degx2.png')
+
+
+# plt.clf()
+# plt.xlabel('In-Degree')
+# plt.ylabel('Normalised Rate')
+# plt.title('In-Degree Distribution of Ring Graph - Varied k')
+# plot_degree_of_graph(10, 10, 0.4, 0.1, 'm')
+# plot_degree_of_graph(10, 20, 0.4, 0.1, 'r')
+# plot_degree_of_graph(10, 40, 0.4, 0.1, 'b')
+# plot_degree_of_graph(10, 80, 0.4, 0.1, 'g')
+# # plot_degree_of_graph(800, 80, 0.4, 0.1, 'c')
+# plt.savefig('na_ring_degx3.png')
 
 # plt.clf()
 # plt.xlabel('In-Degree')
@@ -273,24 +353,56 @@ import matplotlib.pyplot as plt
 # plot_degree_of_graph(1000, 5, 0.4, 0.1, 'c')
 # plt.savefig('na_ring_in_deg3.png')
 
-plt.clf()
-plt.xlabel('In-Degree')
-plt.ylabel('Normalised Rate')
-plt.title('Diameter Distribution of Ring Graph - Fixed p q')
-plot_diameter_of_graph(50, 4, 0.4, 0.1, 5,'m')
-plot_diameter_of_graph(20, 10, 0.4, 0.1, 5,'r')
-plot_diameter_of_graph(10, 20, 0.4, 0.1, 5,'b')
-plot_diameter_of_graph(5, 40, 0.4, 0.1, 5,'y')
+# plt.clf()
+# plt.xlabel('In-Degree')
+# plt.ylabel('Normalised Rate')
+# plt.title('Diameter Distribution of Ring Graph - Fixed p q')
+# plot_diameter_of_graph(12, 12, 0.5, 0.1, 5,'m')
+# plot_diameter_of_graph(20, 10, 0.4, 0.1, 5,'r')
+# plot_diameter_of_graph(10, 20, 0.4, 0.1, 5,'b')
+# plot_diameter_of_graph(5, 40, 0.4, 0.1, 5,'y')
 #
-# plt.savefig('na_ring_diameter.png')
+# plt.savefig('na_ring_diameter5.png')
+
+
+# plt.clf()
+# plt.xlabel('In-Degree')
+# plt.ylabel('Normalised Rate')
+# plt.title('Diameter Distribution of Ring Graph - Fixed p q')
+# plot_diameter_of_graph(12, 12, 0.4, 0.1, 10,'m')
+# plot_diameter_of_graph(20, 10, 0.4, 0.1, 10,'r')
+# plot_diameter_of_graph(10, 20, 0.4, 0.1, 10,'b')
+# plot_diameter_of_graph(5, 40, 0.4, 0.1, 10,'y')
+
+# plt.savefig('na_ring_diameter6.png')
 #
-# results = diameter_clustering_vs_prob_ring(30, 20, 0.4, 0.1, 1)
+# #
+# results = diameter_clustering_vs_prob_ring(20, 20, 0.4, 0.1, 3)
 #
-# plt.xlabel('Rewiring Probability')
-# plt.ylabel('Diameters')
-# plt.title('Diameter Distribution of ws Graph')
+# plt.xlabel('Probability of p')
+# plt.ylabel('Clustering Coefficient')
+# plt.title('Clustering Coefficients for fixed q = 0.1')
 # print(results[1])
 # print(results[2])
-# plt.loglog(results[0], results[1], marker='.', linestyle='None', color='b')
-# plt.loglog(results[0], results[2], marker='.', linestyle='None', color='r')
-# plt.savefig('na_ring_cluster.png')
+# # plt.loglog(results[0], results[1], marker='.', linestyle='None', color='b')
+# plt.plot(results[0], results[2], marker='.', linestyle='-', color='r')
+# # plt.xscale('')
+# plt.savefig('na_ring_cluster3.png')
+
+
+# aver_dist = average_normalized_degree_distribution(1000)
+# xdata = []
+# ydata = []
+# for degree in aver_dist:
+#     xdata += [degree]
+#     ydata += [aver_dist[degree]]
+# plt.xlabel('in-degree')
+# plt.ylabel('Normalized rate')
+# plt.title('In-degree distribution')
+#
+# # plt.loglog(results[0], results[1], marker='.', linestyle='None', color='b')
+# plt.plot(xdata, ydata, marker='.', linestyle='None', color='r')
+# # plt.xscale('')
+# plt.savefig('summ_in_degree_ave.png')
+
+# make_ring_graph(10, 10, 0.4, 0.1)
